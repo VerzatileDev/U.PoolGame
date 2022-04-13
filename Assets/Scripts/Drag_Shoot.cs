@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Drag_Shoot : MonoBehaviour
 {
@@ -26,9 +24,11 @@ public class Drag_Shoot : MonoBehaviour
 
     private void Update()
     {
+
+        // <-- Disable These Functions when Ball is In motion ! --> //
         if (Input.GetMouseButtonDown(0)) // 0 - Left Click
         {
-            startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
+            startPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
             startPoint.z = 15; // <-- To avoid Elements Blocking this Object.
 
             /* Debug   Area */
@@ -54,7 +54,6 @@ public class Drag_Shoot : MonoBehaviour
 
             force = new Vector2(Mathf.Clamp(startPoint.x - endPoint.x, minPower.x, maxPower.x), Mathf.Clamp(startPoint.y - endPoint.y, minPower.y, maxPower.y));
             rb.AddForce(force * power, ForceMode2D.Impulse); // Velocity to Object.
-
             fl.EndForceLine();
         }
     }
