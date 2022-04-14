@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7724654879174857901, guid: ca78266dc1317e541ae771d519227776,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7724654879174857902, guid: ca78266dc1317e541ae771d519227776,
         type: 3}
       propertyPath: m_RootOrder
